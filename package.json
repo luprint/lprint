@@ -1,0 +1,80 @@
+{
+	"name": "luaPrint",
+	"displayName": "LuaPrint",
+	"description": "A helper library for printing with lua",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:luaPrint.deletePrintStatements",
+		"onCommand:luaPrint.commentOutPrintStatements",
+		"onCommand:luaPrint.uncommentPrintStatements",
+		"onCommand:luaPrint.newPrintStatement",
+		"onCommand:luaPrint.newPrettyPrint"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "luaPrint.deletePrintStatements",
+				"title": "LuaPrint: Delete all print statements in file"
+			},
+			{
+				"command": "luaPrint.commentOutPrintStatements",
+				"title": "LuaPrint: Comment out all print statements in a file"
+			},
+			{
+				"command": "luaPrint.uncommentPrintStatements",
+				"title": "LuaPrint: Uncomment all print statements in a file"
+			},
+			{
+				"command": "luaPrint.newPrintStatement",
+				"title": "LuaPrint: generate new print statement"
+			},
+			{
+				"command": "luaPrint.newPrettyPrint",
+				"title": "LuaPrint: generate new print statement with variable wrapped in pretty print"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "yarn run compile-tests && yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "npm run e2e && npm run unit",
+		"unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"e2e": "npm run compile-tests && node ./out/e2e/runTest.js",
+		"build": "vsce package"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.5",
+		"@babel/preset-env": "^7.16.5",
+		"@babel/preset-typescript": "^7.16.5",
+		"@types/glob": "^7.1.4",
+		"@types/jest": "^27.0.3",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.63.0",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"@vscode/test-electron": "^1.6.2",
+		"babel-jest": "^27.4.5",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"jest": "^27.4.5",
+		"mocha": "^9.1.3",
+		"ts-loader": "^9.2.5",
+		"typescript": "^4.4.4",
+		"webpack": "^5.52.1",
+		"webpack-cli": "^4.8.0"
+	}
+}
