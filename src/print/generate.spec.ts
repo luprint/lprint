@@ -45,7 +45,7 @@ describe("generate", () => {
         const mockPosition = jest.fn().mockImplementation(() => position);
         const editor = mockEditor;
 
-        const result = await generate(editor, mockPosition, mockRange)(`print("LP🎨1: 🐸 called in test.lua"\n`);
+        const result = await generate(editor, mockPosition, mockRange)(`print("LP🎨1: 🐈 called in test.lua"\n`);
 
         expect(mockEditor.edit).toHaveBeenCalledTimes(1);
 
@@ -54,7 +54,7 @@ describe("generate", () => {
         expect(mockPosition).toHaveBeenCalledTimes(1);
         expect(mockPosition).toHaveBeenCalledWith(2, 0);
         expect(textEdit.insert).toHaveBeenCalledTimes(1);
-        expect(textEdit.insert).toHaveBeenCalledWith(position, `print("LP🎨2️⃣: 🐸 called in test.lua")\n`);
+        expect(textEdit.insert).toHaveBeenCalledWith(position, `print("LP🎨2️⃣: 🐈 called in test.lua")\n`);
 
         expect(result).toBe(true);
     });
@@ -87,7 +87,7 @@ describe("generate", () => {
             }
         };
 
-        const result = await generate(editor, mockPosition, mockRange)(`print("LP🎨1: 🐸 called in test.lua"\nLP🎨1\n`);
+        const result = await generate(editor, mockPosition, mockRange)(`print("LP🎨1: 🐈 called in test.lua"\nLP🎨1\n`);
 
         expect(editor.edit).toHaveBeenCalledTimes(1);
 
@@ -129,7 +129,7 @@ describe("generate", () => {
             }
         };
 
-        const result = await generate(editor, mockPosition, mockRange, { isPrettyPrintEnabled: true })(`print("LP🎨1: 🐸 called in test.lua"\nLP🎨1\n`);
+        const result = await generate(editor, mockPosition, mockRange, { isPrettyPrintEnabled: true })(`print("LP🎨1: 🐈 called in test.lua"\nLP🎨1\n`);
 
         expect(editor.edit).toHaveBeenCalledTimes(1);
 
