@@ -1,6 +1,14 @@
 import format from "./format";
 
 describe("format", () => {
+    beforeEach(() => {
+        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
+    });
+
+    afterEach(() => {
+        jest.spyOn(global.Math, 'random').mockRestore();
+    });
+
     describe("WITH no variable", () => {
         it("SHOULD return a print statement with a count for the file", () => {
             expect(format({
