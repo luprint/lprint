@@ -2,7 +2,7 @@ import format from "./format";
 
 describe("format", () => {
     beforeEach(() => {
-        jest.spyOn(global.Math, 'random').mockReturnValue(0.123456789);
+        jest.spyOn(global.Math, 'random').mockReturnValue(0.987654321);
     });
 
     afterEach(() => {
@@ -14,7 +14,7 @@ describe("format", () => {
             expect(format({
                 count: 10,
                 file: "fileName.lua"
-            })).toBe(`print("LP🎨11: called in fileName.lua")\n`);
+            })).toBe(`print("LP🎨11: 🐸 called in fileName.lua")\n`);
         });
 
         it("SHOULD return a print statement with a count for the file even with prettyPrint set to true", () => {
@@ -22,7 +22,7 @@ describe("format", () => {
                 count: 10,
                 file: "fileName.lua",
                 isPrettyPrintEnabled: true,
-            })).toBe(`print("LP🎨11: called in fileName.lua")\n`);
+            })).toBe(`print("LP🎨11: 🐸 called in fileName.lua")\n`);
         });
 
         const emojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟"];
@@ -31,7 +31,7 @@ describe("format", () => {
                 expect(format({
                     count: index,
                     file: "another.lua",
-                })).toBe(`print("LP🎨${element}: called in another.lua")\n`);
+                })).toBe(`print("LP🎨${element}: 🐸 called in another.lua")\n`);
             });
         });
     });

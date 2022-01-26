@@ -1,3 +1,5 @@
+import noticableEmojis from "./noticableEmojis";
+
 export interface GenerateProps {
     count: number;
     file: string;
@@ -9,6 +11,7 @@ const numberEmojis = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6�
 
 export default (generateProps: GenerateProps) => {
     const { count, file, variable, isPrettyPrintEnabled } = generateProps;
+    const emojiToUse = noticableEmojis[Math.floor(Math.random() * noticableEmojis.length)];
 
     if (variable) {
         const variables = variable.split(",").map(name => name.trim());
@@ -18,6 +21,6 @@ export default (generateProps: GenerateProps) => {
         return `print("LP🎨${numberEmojis[count] || count + 1}: ${formattedVariables} in ${file}")\n`;
     }
     else {
-        return `print("LP🎨${numberEmojis[count] || count + 1}: called in ${file}")\n`;
+        return `print("LP🎨${numberEmojis[count] || count + 1}: ${emojiToUse} called in ${file}")\n`;
     }
 };
