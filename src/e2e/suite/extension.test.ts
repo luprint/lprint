@@ -1,8 +1,21 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import prettyPrint from '../../print/prettyPrint';
+import * as sinon from 'sinon';
+
 
 suite('Extension Test Suite', async () => {
+	let random: sinon.SinonStub;
+	before(function () {
+		random = sinon.stub(Math, 'random').returns(0.987654321);
+	});
+
+	after(function () {
+		if (random) {
+			random.restore();
+		}
+	});
+
 	test('SHOULD delete all print statements in file', async () => {
 		const document = await vscode.workspace.openTextDocument(vscode.workspace.rootPath + "/src/e2e/examples/deleteAllPrintStatements.lua");
 		const editor = await vscode.window.showTextDocument(document);
