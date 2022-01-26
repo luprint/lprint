@@ -1,4 +1,4 @@
-export default `function lpPrettyPrint(variable, indent)
+export default `function lpPrettyPrint(variable: any, indent: number?): string
 	local indentLevel = indent or 0
 	if type(variable) == 'table' then
 		local store = "{\\n"
