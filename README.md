@@ -8,8 +8,8 @@ It's very rough so may be a bit buggy!
 
 `newPrintStatement`:
 
-  a) if you have something highlighted (e.g. a variable) this generate a print statement on the line below which will print the type, the value of the variable. It also includes the file name where the print statement is from.
-
+  a) if you have something highlighted (e.g. a variable) this will generate a print statement on the line below which will print the type, the value of the variable. It also includes the file name where the print statement is from.
+x
   b) if you don't have any code highlighted, it will just put a new print statement with some randomly generated text on that line.
 
 `newPrettyPrintStatement`:
@@ -30,13 +30,17 @@ It's very rough so may be a bit buggy!
 
 1) Options to choose what you want in your randomly generated text
 
-2) A Print sweeper option, which will delete all print messages which arn't commited yet.
+2) A print sweeper option, which will delete all print messages which arn't commited yet.
 
 3) Better quality prettyPrint
 
 4) Print limit warnings
 
 5) Jump to LTP print statement option
+
+6) As with all projects, better testing.
+
+7) Smoother cleanup of print statements
 
 ## Requirements
 

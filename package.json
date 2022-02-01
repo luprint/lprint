@@ -21,11 +21,11 @@
 		"commands": [
 			{
 				"command": "luaPrint.deletePrintStatements",
-				"title": "LuaPrint: Delete all print statements in file"
+				"title": "LuaPrint: Delete print statements in a file"
 			},
 			{
 				"command": "luaPrint.commentOutPrintStatements",
-				"title": "LuaPrint: Comment out all print statements in a file"
+				"title": "LuaPrint: Comment out print statements in a file"
 			},
 			{
 				"command": "luaPrint.uncommentPrintStatements",
@@ -33,11 +33,11 @@
 			},
 			{
 				"command": "luaPrint.newPrintStatement",
-				"title": "LuaPrint: generate new print statement"
+				"title": "LuaPrint: new print statement"
 			},
 			{
 				"command": "luaPrint.newPrettyPrint",
-				"title": "LuaPrint: generate new print statement with variable wrapped in pretty print"
+				"title": "LuaPrint: new pretty print statement"
 			}
 		]
 	},
