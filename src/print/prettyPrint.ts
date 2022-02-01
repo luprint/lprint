@@ -2,7 +2,7 @@ export default `function lpPrettyPrint(variable: any, indent: number?): string
 	local indentLevel = indent or 0
 	if type(variable) == 'table' then
 		local store = "{\\n"
-		for key, in pairs(variable) do
+		for key, value in pairs(variable) do
 			if type(key) ~= 'number' then
 				key = '"'..key..'"'
 			end
