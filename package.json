@@ -1,6 +1,7 @@
 {
 	"name": "luaPrint",
 	"displayName": "LuaPrint",
+	"publisher": "LuaPrint",
 	"description": "A helper library for printing with lua",
 	"version": "0.1.0",
 	"engines": {
