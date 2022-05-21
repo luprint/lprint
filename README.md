@@ -46,16 +46,25 @@ x
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
-## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Contributing
 
-For example:
+## Setup
 
-This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+## Testing
+
+The project has unit tests and e2e tests.
+
+To run both: `npm run test`
+
+To run just unit: `npm run unit`
+
+To run just e2e: `npn run e2e`
+
+*note* To fix, the cleanup function of the E2Es needs adding, so you'll see the e2e files are changed after the tests. So you'll need to reset them or your tests will fail.
+
+To debug locally you can run run the dubugger, which will open a new vscode workspace with just the
 
 ## Known Issues
 
